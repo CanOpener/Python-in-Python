@@ -5,18 +5,17 @@ import snake
 import block
 pygame.init()
 
-FRAMEX = 800
-FRAMEY = 600
-BOUNDSX = 800
-BOUNDSY = 600
+FRAMEX = 500
+FRAMEY = 500
+BOUNDSX = 500
+BOUNDSY = 500
 FPS = 20
 pastSize = 0
 
 gameDisplay = pygame.display.set_mode((FRAMEX, FRAMEY))
 clock = pygame.time.Clock()
-snakey = snake.Snake([400, 500], 10, colours.blue, colours.black, pygame, gameDisplay)
+snakey = snake.Snake([250, 450], 10, colours.blue, colours.black, pygame, gameDisplay)
 apple = block.Block([BOUNDSX/2, BOUNDSY/2], colours.red, pygame, gameDisplay, 10)
-pygame.display.set_caption("Pyhton in Python")
 
 
 def clear() :
@@ -42,7 +41,7 @@ def update() :
     snakey.turnedThisTurn = False
     if (snakey.size != pastSize) :
         pastSize = snakey.size
-        if (snakey.size%2 == 0) and (snakey.size != 0) :
+        if (snakey.size%10 == 0) and (snakey.size != 0) :
             FPS += 1
     pygame.display.set_caption("Pyhton in Python - " + str(snakey.size))
 
