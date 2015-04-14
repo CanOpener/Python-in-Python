@@ -74,9 +74,9 @@ class Snake :
 
     def badMove(self,boundx, boundy) :
         headCO = self.head.getCoordinates()
-        if self.head.x > boundx or self.head.x < 0 :
+        if self.head.x > boundx - 10 or self.head.x < 0 :
             return False
-        elif self.head.y > boundy or self.head.y <0 :
+        elif self.head.y > boundy - 10 or self.head.y <0 :
             return False
         else :
             for bodyBlock in self.body :
