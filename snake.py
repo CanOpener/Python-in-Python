@@ -7,6 +7,7 @@ class Snake :
     headColour = None
     bodyColour = None
     needsGrowth = False
+    turnedThisTurn = False
 
     def __init__(self, locationList, blockSize, hc, bc) :
         self.headColour = hc
@@ -47,6 +48,9 @@ class Snake :
 
 
     def dirChange(self, event, pygame) :
+        if self.turnedThisTurn :
+            return
+
         if event.key == pygame.K_UP :
             if self.direction != 2 :
                 self.direction = 1
@@ -59,3 +63,4 @@ class Snake :
         elif event.key == pygame.K_RIGHT :
             if self.direction != 3 :
                 self.direction = 4
+        self.turnedThisTurn = True

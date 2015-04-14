@@ -24,6 +24,7 @@ def render() :
     pygame.display.update()
 
 def eventHandler() :
+    snakey.turnedThisTurn = False
     for event in pygame.event.get() :
         if event.type == pygame.QUIT :
             pygame.quit()
@@ -37,7 +38,7 @@ while True :
     eventHandler()
     update()
     render()
-    clock.tick(30)
+    clock.tick(15)
 
 pygame.quit()
 quit()
